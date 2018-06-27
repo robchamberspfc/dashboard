@@ -22,7 +22,7 @@
         <a class="skiplink" href="#main" tabindex="0">
             Skip to main content
         </a>
-        <div id="pagePath" class="hide">/</div>
+        <!-- <div id="pagePath" class="hide">/</div>
         <div class="wrapper">
             <div class="header col-wrap">
                 <div class="col col--lg-one-third col--md-one-third">
@@ -31,19 +31,19 @@
                                             <img class="logo" src="https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.png" alt="Office for National Statistics">
                                         <![endif]-->
                         <!--[if gte IE 9]><!-->
-                        <img class="logo" src="https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.svg" alt="Office for National Statistics">
+                        <!-- <img class="logo" src="https://cdn.ons.gov.uk/assets/images/ons-logo/v2/ons-logo.svg" alt="Office for National Statistics"> -->
                         <!--[endif]---->
-                    </a>
+                    <!-- </a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </header>
 
     <div class="page-intro background--astral padding-top-md--4">
         <div class="pl-wrap__inner padding-top-sm--4">
             <div class="wrapper">
                 <h1 class="page-intro__title page-intro__title--home-big">Customise My Data demo</h1>
-                <p class="page-intro__content width-lg--47">Examples of data driven by the new API</p>
+                <p class="page-intro__content width-lg--47">Examples of data driven by the <a href="https://developer.beta.ons.gov.uk/" style="color:#fff;text-decoration:underline">new API</a></p>
             </div>
         </div>
     </div>
@@ -71,13 +71,13 @@
     <div class="background--gallery padding-top-md--4 padding-bottom-md--3">
         <div class="wrapper">
             <h3>Get data for your area</h3>
-            <p>
+            <p class = "padding-left--1">
                 <select class="js-example-basic-single" style="width:50%" id="places" onchange="getDataforRegion()">
                     <option disabled selected>Select area</option>
                 </select>
             </p>
             <div class="col-wrap" id="hidden" style="display:none">
-                <div class="col col--md-half background--white padding-left--1 padding-right--1 padding-top--2 padding-bottom--2 col--lg-half">
+                <div class="col col--md-half background--white padding-left--1 padding-right--1 padding-top--2 padding-bottom--2 col--lg-half margin-bottom-sm--2">
                     <h4 id="populationPlace">Population for </h4>
                     <div class="col-wrap">
                         <div class="col col--md-one-quarter col--lg-one-quarter">
@@ -108,7 +108,7 @@
                     </div>
                     <div id="mid-year-pop-est"></div>
                 </div>
-                <div class="col col--md-half background--white padding-left--1 padding-right--1 padding-top--2 padding-bottom--2 col--lg-half">
+                <div class="col col--md-half background--white padding-left--1 padding-right--1 padding-top--2 padding-bottom--2 col--lg-half margin-bottom-sm--2">
                     <h4 id="ashePlace">Average earnings for </h4>
                     <div class="col-wrap">
                         <div class="col col--md-one-quarter col--lg-one-quarter">

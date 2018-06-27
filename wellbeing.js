@@ -1,24 +1,17 @@
 function loadWellbeing() {
-
     fetch("https://api.beta.ons.gov.uk/v1/datasets/wellbeing-year-ending/editions/time-series/versions/1/observations?time=January 2017 - December 2017&geography=K02000001&estimate=*&allmeasuresofwellbeing=anxiety", {
             mode: 'cors'
         })
         .then(data => data.json())
         .then(function (data) {
-
-
-
             chart = []
-
             data.observations.map(function (data) {
                 if (data.dimensions.estimate.label != "Average (mean)") {
                     let chartdata = [data.dimensions.estimate.label, parseFloat(data.observation)]
                     chart.push(chartdata)
                 }
             })
-
             chart = chart.sort()
-
             Highcharts.chart('anxiety', {
                 chart: {
                     type: 'column'
@@ -64,11 +57,7 @@ function loadWellbeing() {
         })
         .then(data => data.json())
         .then(function (data) {
-
-
-
             chart = []
-
             data.observations.map(function (data) {
                 if (data.dimensions.estimate.label != "Average (mean)") {
                     let chartdata = [data.dimensions.estimate.label, parseFloat(data.observation)]
@@ -76,7 +65,6 @@ function loadWellbeing() {
                 }
             })
             chart = chart.sort()
-
             Highcharts.chart('happiness', {
                 chart: {
                     type: 'column'
@@ -114,7 +102,6 @@ function loadWellbeing() {
                     crosshair: true,
                 }
             });
-
         })
 
     fetch("https://api.beta.ons.gov.uk/v1/datasets/wellbeing-year-ending/editions/time-series/versions/1/observations?time=January 2017 - December 2017&geography=K02000001&estimate=*&allmeasuresofwellbeing=worthwhile", {
@@ -122,19 +109,13 @@ function loadWellbeing() {
         })
         .then(data => data.json())
         .then(function (data) {
-
-
-
             chart = []
-
             data.observations.map(function (data) {
                 if (data.dimensions.estimate.label != "Average (mean)") {
                     let chartdata = [data.dimensions.estimate.label, parseFloat(data.observation)]
                     chart.push(chartdata)
                 }
             })
-
-
             chart = chart.sort()
             Highcharts.chart('worthwhile', {
                 chart: {
@@ -175,24 +156,18 @@ function loadWellbeing() {
             });
 
         })
-
     fetch("https://api.beta.ons.gov.uk/v1/datasets/wellbeing-year-ending/editions/time-series/versions/1/observations?time=January 2017 - December 2017&geography=K02000001&estimate=*&allmeasuresofwellbeing=life-satisfaction", {
             mode: 'cors'
         })
         .then(data => data.json())
         .then(function (data) {
-
-
-
             chart = []
-
             data.observations.map(function (data) {
                 if (data.dimensions.estimate.label != "Average (mean)") {
                     let chartdata = [data.dimensions.estimate.label, parseFloat(data.observation)]
                     chart.push(chartdata)
                 }
             })
-
             chart = chart.sort()
             Highcharts.chart('life-satisfaction', {
                 chart: {
@@ -231,6 +206,5 @@ function loadWellbeing() {
                     crosshair: true,
                 }
             });
-
         })
 }

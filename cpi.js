@@ -45,7 +45,6 @@ function getVersion(latestVersion) {
             //sort the array on the 'sort' field created earlier
             timeseries = timeseries.sort(orderByDate);
             keyFigure(timeseries)
-
             //create the chart
             Highcharts.chart('chart', {
                 series: [{
@@ -68,7 +67,6 @@ function getVersion(latestVersion) {
                     title: {
                         enabled: false
                     },
-                    // min: 0
                 },
                 legend: {
                     enabled: false
@@ -88,7 +86,6 @@ function getVersion(latestVersion) {
 }
 
 function keyFigure(timeseries) {
-
     let numberOfTimeseires = timeseries.length - 1
     let latestFigure = timeseries[numberOfTimeseires]
     let lastYearFigure = timeseries[numberOfTimeseires - 12]
@@ -96,7 +93,6 @@ function keyFigure(timeseries) {
     let percentageChange = (percentageCalc.toFixed(1))
     let figure = document.createTextNode(percentageChange + "%");
     let date = document.createTextNode(latestFigure[0]);
-
     let showFigure = document.createElement("p");
     let showDate = document.createElement("p");
     showFigure.appendChild(figure);
