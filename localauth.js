@@ -12,8 +12,23 @@ function populateLocations() {
                 node.value = data.id
                 document.getElementById("places").appendChild(node);
             })
+            sortlist()
         })
+        
 }
+
+function sortlist() {
+    let lb = document.getElementById('places');
+    arrTexts = new Array();
+    for(i=0; i<lb.length; i++)  {
+      arrTexts[i] = lb.options[i].text;
+    }
+    arrTexts.sort();
+    for(i=0; i<lb.length; i++)  {
+      lb.options[i].text = arrTexts[i];
+    //   lb.options[i].value = arrTexts[i];
+    }
+    }
 
 function getDataforRegion(value) {
     document.getElementById("hidden").style.display = ""
