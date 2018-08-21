@@ -1,5 +1,5 @@
 function populateLocations() {
-    fetch("https://api.beta.ons.gov.uk/v1/code-lists/ashe-geography/codes", {
+    fetch("https://api.beta.ons.gov.uk/v1/code-lists/local-authority/editions/2016/codes", {
             mode: 'cors'
         })
         .then(data => data.json())
@@ -20,14 +20,17 @@ function populateLocations() {
 function sortlist() {
     let lb = document.getElementById('places');
     arrTexts = new Array();
+    arrValue = new Array();
     for(i=0; i<lb.length; i++)  {
       arrTexts[i] = lb.options[i].text;
+      arrValue[i] = lb.options[i].value;
     }
     arrTexts.sort();
     for(i=0; i<lb.length; i++)  {
       lb.options[i].text = arrTexts[i];
-    //   lb.options[i].value = arrTexts[i];
     }
+
+    
     }
 
 function getDataforRegion(value) {
