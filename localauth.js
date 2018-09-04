@@ -12,26 +12,29 @@ function populateLocations() {
                 node.value = data.id
                 document.getElementById("places").appendChild(node);
             })
+
             sortlist()
         })
-        
+
 }
 
 function sortlist() {
     let lb = document.getElementById('places');
-    arrTexts = new Array();
-    arrValue = new Array();
-    for(i=0; i<lb.length; i++)  {
-      arrTexts[i] = lb.options[i].text;
-      arrValue[i] = lb.options[i].value;
-    }
-    arrTexts.sort();
-    for(i=0; i<lb.length; i++)  {
-      lb.options[i].text = arrTexts[i];
-    }
+    let options = document.getElementById('places');
+    let n_options = options.length;
+    let temp = []
 
-    
+    for (i = n_options; i--;) {
+        temp[i] = options[i].text + ";" + options[i].value;
     }
+    temp.sort();
+    for (i = n_options; i--;) {
+        parts = temp[i].split(';');
+        options[i].text = parts[0];
+        options[i].value = parts[1];
+    }
+}
+
 
 function getDataforRegion(value) {
     document.getElementById("hidden").style.display = ""
