@@ -43,6 +43,7 @@ function getDataforRegion(value) {
     let locationName = location.options[location.selectedIndex].text;
     getPopulation(locationID, locationName)
     getASHE(locationID, locationName)
+    getDatasets(locationID, locationName)
 }
 
 function getPopulation(locationID, locationName) {
