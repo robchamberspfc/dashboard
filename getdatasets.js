@@ -11,28 +11,16 @@ function getDatasets(locationID) {
         .then(data => data.json())
         .then(function (data) {
             data.items.map(function (data) {
-            // console.log(data)
             let datasetAPI = data.editions["0"].links.latest_version.href
-            // console.log(datasetAPI)
-            // datasetURI = datasetAPI.split("/v1")[1]
-            // console.log(datasetURI)
-            // datasetWeb = "https://" + domain + datasetURI
-            // console.log(datasetWeb)
-
             fetch(datasetAPI + "/metadata", {
                 mode: 'cors'
             })
             .then(data => data.json())
             .then(function (data) {
-                console.log(data)
                 let datasetAPI = data.links.version.href
-                // console.log(datasetAPI)
                 datasetURI = datasetAPI.split("/v1")[1]
-                // console.log(datasetURI)
                 datasetWeb = "https://" + domain + datasetURI
-
                 datasetName = data.title
-                console.log (datasetName)
                 let h5 = document.createElement("h5")
                 let node = document.createElement("a"); // Create a <h1> node
                 let textnode = document.createTextNode(datasetName); // Create a text node
